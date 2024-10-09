@@ -3,10 +3,12 @@
     "version": "0.1.0",
     "scripts": {
         "dev": "vite dev",
-        "build": "vite build",
+        "build": "vite build && npm run build:server",
         "preview": "vite preview",
         "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
-        "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch"
+        "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+        "build:server": "vite build --ssr",
+        "start": "node build"
     },
     "devDependencies": {
         "@discord/embedded-app-sdk": "^1.4.2",
@@ -30,6 +32,7 @@
         "node": ">=18.0.0"
     },
     "dependencies": {
-        "@vitejs/plugin-basic-ssl": "^1.1.0"
+        "@vitejs/plugin-basic-ssl": "^1.1.0",
+        "@sveltejs/adapter-node": "^1.0.0"
     }
 }
